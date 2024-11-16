@@ -1,0 +1,100 @@
+.header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 15px 20px;
+    background: linear-gradient(90deg, #8e44ad, #3498db);
+    color: white;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+  
+    .logo {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+  
+      img {
+        height: 60px;
+        width: auto;
+        border-radius: 10px;
+        transition: transform 0.3s, box-shadow 0.3s;
+        cursor: pointer;
+  
+        &:hover {
+          transform: scale(1.1);
+          box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+        }
+      }
+  
+      .logo-text {
+        font-size: 1.5rem;
+        font-weight: bold;
+        font-family: 'Poppins', sans-serif;
+      }
+    }
+  
+    .icons {
+      display: flex;
+      gap: 20px;
+  
+      .icon-container {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        width: 50px;
+        height: 50px;
+        background-color: rgba(255, 255, 255, 0.2);
+        border-radius: 50%;
+        transition: transform 0.3s, background-color 0.3s;
+        cursor: pointer;
+  
+        &:hover {
+          transform: scale(1.2);
+          background-color: rgba(255, 255, 255, 0.4);
+        }
+  
+        i {
+          font-size: 1.8rem;
+          color: white;
+        }
+      }
+  
+      .user-container {
+        position: relative;
+  
+        .user-image {
+          width: 100%;
+          height: 100%;
+          object-fit: cover;
+          border-radius: 50%;
+          border: 2px solid white;
+          transition: transform 0.3s, border 0.3s;
+  
+          &:hover {
+            transform: scale(1.1);
+            border-color: yellow;
+          }
+        }
+      }
+    }
+  }
+  
+  @media (max-width: 768px) {
+    .header {
+      flex-direction: column;
+      align-items: flex-start;
+      padding: 10px;
+  
+      .logo {
+        margin-bottom: 10px;
+      }
+  
+      .icons {
+        justify-content: space-around;
+        width: 100%;
+      }
+    }
+  }
+  

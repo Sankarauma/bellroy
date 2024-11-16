@@ -1,0 +1,50 @@
+<div class="dashboard-container">
+    <div class="search-bar">
+      <input type="text" placeholder="Search for items..." />
+      <button>🔍</button>
+    </div>
+  
+    <div class="main-content">
+      <div class="sidebar">
+        <h3>Categories</h3>
+        <ul>
+          <li>Electronics</li>
+          <li>Fashion</li>
+          <li>Books</li>
+          <li>Home Appliances</li>
+          <li>Sports</li>
+          <li>Furniture</li>
+        </ul>
+      </div>
+  
+      <div class="items-section">
+        <div class="sort-bar">
+          <button (click)="toggleSortMenu()">Sort</button>
+        </div>
+  
+        <div class="items">
+          <div class="item-card" *ngFor="let item of sortedItems">
+            <img [src]="item.image" alt="{{ item.name }}" />
+            <div class="card-content">
+              <h4>{{ item.name }}</h4>
+              <p>{{ item.description }}</p>
+              <button>Add to Cart</button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  
+   
+    <div class="sort-menu" [ngClass]="{ open: isSortMenuOpen }">
+      <div class="sort-header">
+        <h4>Sort By</h4>
+        <button class="close-btn" (click)="toggleSortMenu()">×</button>
+      </div>
+      <ul>
+        <li (click)="sortByName('asc')">Name (A to Z)</li>
+        <li (click)="sortByName('desc')">Name (Z to A)</li>
+      </ul>
+    </div>
+  </div>
+  
